@@ -1,25 +1,27 @@
 body {
-    font: 20px Montserrat, sans-serif;
+    font: 25px Montserrat, sans-serif;
     line-height: 1.8;
-    color: #f5f6f7;
+    color: #00ffff;
   }
-  p {font-size: 16px;}
+  p { font-size: 22px; } 
   .margin {margin-bottom: 45px;}
   .bg-1 { 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
+    
   }
   .bg-2 { 
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #0D2B2E; /* Dark Blue */
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffffff; /* White */
-    color: #555555;
+    background-color: #ffff00; /* purple */
+    color: #00ffff;
   }
   .bg-4 { 
-    background-color: #2f2f2f; /* Black Gray */
+    background-color: #ff0000; /* Black Gray */
     color: #fff;
+   
   }
   .container-fluid {
     padding-top: 70px;
@@ -31,10 +33,43 @@ body {
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
-    font-size: 12px;
+    font-size: 18px;
     letter-spacing: 5px;
   }
   .navbar-nav  li a:hover {
-    color: #1abc9c !important;
+    color: #1abc9c !important;}
+   #para1 {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+.entry h2{
+    font-size:36px;
+    color:red;
+    font-weight:800;
+}
+
+.entry h2:hover{
+    color:blue;
+}
+
+#last { 
+  color: orange;
+  font-size:31px;
+}  
+
+ 
+
 
