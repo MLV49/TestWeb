@@ -75,7 +75,7 @@ body {
     top: 0;
     width: 100%;
 }
-.sticky + #div1{
+.sticky + .content{
     padding-top: 140px;
     
 }
