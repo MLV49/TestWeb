@@ -70,6 +70,12 @@ body {
   font-size:31px;
 }  
 
- 
-
-
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.sticky + #div1{
+    padding-top: 140px;
+    
+}

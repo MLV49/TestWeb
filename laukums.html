@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>Laukums</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+ <form>
+  <label for="skaitlis">N vērtība:</label><br>
+  <input type="number" id="skaitlis" name=skaitlis"><br><br>
+</form>
+        <button onclick="myFunction()">Zīmēt</button>
+        <br><br>
+    <script>
+        function myFunction() {
+            var n = document.getElementById("skaitlis").value;
+            var tabula = document.createElement("div");
+            for (let i = 0; i < n; i++) {
+                var rinda = document.createElement("div");
+                for (let j = 0; j < n; j++) {
+                   var button = document.createElement("button");
+                   var text = document.createTextNode(""+(n*i+(j+1)));
+                   button.appendChild(text);
+                   rinda.appendChild(button);
+                }
+                tabula.appendChild(rinda);
+            }
+            document.body.appendChild(tabula);
+        }
+        function cleaning() {
+            document.body.removeChild(this.tabula);
+        }
+        </script>
+    </body>
+</html>

@@ -18,7 +18,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default" id="myNavbar">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -33,6 +33,7 @@
         <li><a href="#">WHO</a></li>
         <li><a href="#">WHAT</a></li>
         <li><a href="#">WHERE</a></li>
+        <li><a href="laukums.html" target="_blank">LAUKUMS</a></li>
       </ul>
     </div>
   </div>
@@ -81,6 +82,17 @@
 <footer class="container-fluid bg-4 text-center">
   <p>Šī ir mana web lapa</p> 
 </footer>
-
+<script>
+        window.onscroll = function() {myFunction();};
+        var navbar = document.getElementById("myNavbar");
+        var sticky = navbar.offsetTop;
+        function myFunction(){
+            if (window.pageYOffset >= sticky){
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        </script>
 </body>
 </html>
