@@ -4,10 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            body {background-color: #ff9900;}
+            body {background-color: yellowgreen;}
             label   {color: blue;}
-            button    {color: red;}
-            input {color: #663300;}
+            button    {color: orangered;}
         </style>
     </head>
     <body>
@@ -15,16 +14,17 @@
   <label for="skaitlis">N vērtība:</label><br>
   <input type="number" id="skaitlis" name=skaitlis"><br><br>
 </form>
-        <button onclick="myFunction()">Zīmēt</button>
+        <button onclick="zimeshana()">Zīmēt</button>
         <br><br>
     <script>
-        function myFunction() {
+        function zimeshana() {
             var n = document.getElementById("skaitlis").value;
             var tabula = document.createElement("div");
             for (let i = 0; i < n; i++) {
                 var rinda = document.createElement("div");
                 for (let j = 0; j < n; j++) {
                    var button = document.createElement("button");
+                   button.style="height:40px;width:40px;background-color: yellow";
                    var text = document.createTextNode(""+(n*i+(j+1)));
                    button.appendChild(text);
                    rinda.appendChild(button);
@@ -32,9 +32,6 @@
                 tabula.appendChild(rinda);
             }
             document.body.appendChild(tabula);
-        }
-        function cleaning() {
-            document.body.removeChild(this.tabula);
         }
         </script>
     </body>
