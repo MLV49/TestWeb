@@ -6,23 +6,29 @@ body {
   p { font-size: 22px; } 
   .margin {margin-bottom: 45px;}
   .bg-1 { 
-    background-color: #1abc9c; /* Green */
+    background-color: #1abc9c; 
     color: #ffffff;
     
   }
   .bg-2 { 
-    background-color: #0D2B2E; /* Dark Blue */
+    background-color: #0D2B2E; 
     color: #ffffff;
   }
   .bg-3 { 
-    background-color: #ffff00; /* purple */
+    background-color: #ffff00; 
     color: #00ffff;
   }
   .bg-4 { 
-    background-color: #ff0000; /* Black Gray */
+    background-color: #ff0000; 
     color: #fff;
    
   }
+  .bg-5 { 
+    background-color: #7FFF00;
+    color: #fff;
+   
+  }
+
   .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -94,4 +100,19 @@ body {
     height: 50px;
     font-size: 0px;
     background-color: #474e5d;
+}
+div1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  animation-name: example;
+  animation-duration: 10s;
+  animation-iteration-count: 99999;
+}
+
+@keyframes example {
+  0%   {background-color: red;}
+  25%  {background-color: yellow;}
+  50%  {background-color: blue;}
+  100% {background-color: green;}
 }
