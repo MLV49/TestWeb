@@ -116,3 +116,35 @@ div1 {
   50%  {background-color: blue;}
   100% {background-color: green;}
 }
+
+.buttonStyle{
+  background-color: #ff9900;
+  width: 10%;
+  height: 10%;
+  color: #ff9900;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.newButtonStyle{
+  background-color: #ff9900;
+  width: 10%;
+  height: 10%;
+  color: red;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.finalButtonStyle{
+  background-color: #ff9900;
+  width: 10%;
+  height: 10%;
+  color: #8b32a8;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  pointer-events: none;
+}
+.liels{
+    font-size:90px;
+}

@@ -1,21 +1,108 @@
-
 <html>
     <head>
-        <title>Laukums</title>
+        <link rel="stylesheet" href="stils.css">
+
+        <title>LAUKUMS</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/newcss.css">
+        <script>
+            var firstTime = true;
+            var vertibas3;
+            var sakums=false;
+            var pirmajamID, otrajamID;
+            var vertibas;
+            var n;
+            var beigas;
+            var t0,t1;
+            var laiks;
+            function myFunction(){
+                t0=performance.now();
+                document.getElementById("buttonDiv").innerHTML="";
+                n = document.getElementById("log").value;
+                var skait = 1;
+                beigas=0;
+                vertibas = ['1','1','2','2','3','3','4','4','5', '5','6','6','7','7','8','8','9','9','10','10','11','11','12','12','13','13','14','14','15','15','16','16','17','17','19','19', '18', '18', '20', '20', '21', '21', '22', '22', '23', '23', '24', '24', '25', '25', '26', '26', '27', '27', '28', '28', '29', '29', '30', '30'];
+                salidzin = ['1','1','2','2','3','3','4','4','5','5', '6','6','7','7','8','8','9','9','10','10','11','11','12','12','13','13','14','14','15','15','16','16','17','17','19','19', '18', '18', '20', '20', '21', '21', '22', '22', '23', '23', '24', '24', '25', '25', '26', '26', '27', '27', '28', '28', '29', '29', '30', '30'];
+                var vertibas3 = ['','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''];
+                for(var g=0;g<n*n;g++){
+                    while(true){
+                        var alreadyHas = false;
+                        ran=getRandomInt(n*n);
+                        for(var z=0;z<g;z++){
+                            if(vertibas3[z]===ran){
+                                alreadyHas=true;
+                                break;
+                            }
+                        }
+                        if(!alreadyHas){
+                            vertibas3[g]=ran;
+                            break;
+                        }  
+                    }
+                }
+                for(var i=0;i<n;i++){
+                    for(var j=0;j<n;j++){
+                        var button2 = document.createElement("button");
+                        var text = document.createTextNode(vertibas[vertibas3[skait-1]]);
+                        button2.classList.add("buttonStyle");
+                        button2.appendChild(text);
+                        button2.setAttribute('onclick',"poguFunction(this)");
+                        button2.id=vertibas3[skait-1];
+                        skait++;
+                        document.getElementById("buttonDiv").appendChild(button2);
+                    }
+                    var blankLine = document.createElement("br");
+                    document.getElementById("buttonDiv").appendChild(blankLine);
+                }
+            }
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * Math.floor(max));
+            }
+            function poguFunction(x){
+                if(n==3 || n<=1 || n==7 ){
+                   alert("Ievadiet pāra skaitli no 2 līdz 8");
+               }else if (n != 3)
+                if(firstTime){
+                    if(sakums){
+                        document.getElementById(pirmajamID).className="buttonStyle";
+                        document.getElementById(otrajamID).className="buttonStyle";
+                    }
+                    x.className="newButtonStyle";
+                    firstTime=false;
+                    pirmajamID = x.id;
+                }
+                else{
+                    x.className="newButtonStyle";
+                    otrajamID = x.id;
+                    firstTime=true;
+                    sakums=true;
+                    if(vertibas[Number.parseInt(pirmajamID)]===salidzin[Number.parseInt(otrajamID)]){
+                        sakums=false;
+                        document.getElementById(pirmajamID).className="finalButtonStyle";
+                        document.getElementById(otrajamID).className="finalButtonStyle";
+                        beigas++;
+                    }
+                    if(beigas===n*n/2){
+                        t1=performance.now();
+                        laiks=((t1-t0)/1000).toFixed(1);
+                        document.getElementById("buttonDiv").innerHTML="";
+                        var text2 = document.createTextNode("Spēle pabeigta, laiks "+laiks +" sekundes!");
+                        document.getElementById("buttonDiv").style.fontSize="40px";
+                        document.getElementById("buttonDiv").appendChild(text2);
+                        
+                   }
+                }
+            }
+        </script>
     </head>
-     <body>
-        <div>
-        <form id="forma">
-           <h2 style="color: black">Ievadiet skaitli (Max 5)</h2>
-            <br>
-            <input type="number" id="skaitlis">
-        </form>
-        <button onclick="taisitLaukumu()" style="width: 40px; height: 40px; background-color: red;">Sākt</button>
+    <body>
+        <label for="log">n</label>
+        <input type="number" step="2" min="2" max="8" id="log" name="log" value="">
+        <button type="button" onclick="myFunction()">Spēlēt</button>
+        <br/>
+        <div id="buttonDiv" style="width: 1000px; height: 1000px">
+            
         </div>
-        <div id="divs1"></div>
-        <script src="laukums.js"></script>
+        
     </body>
 </html>
